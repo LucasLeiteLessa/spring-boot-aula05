@@ -124,7 +124,7 @@ curl -s -X DELETE http://localhost:8080/api/v1/categorias/2 -w "\nHTTP Status: %
 
 Abaixo há duas coleções que você pode importar no Postman (File > Import > Raw text):
 
-- Coleção de Produtos (igual ao exemplo usado anteriormente)
+- Coleção de Produtos
 
 ```json
 {
