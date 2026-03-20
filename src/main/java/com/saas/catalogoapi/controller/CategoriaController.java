@@ -3,8 +3,6 @@ package com.saas.catalogoapi.controller;
 
 import com.saas.catalogoapi.dto.CategoriaRequest;
 import com.saas.catalogoapi.dto.CategoriaResponse;
-import com.saas.catalogoapi.dto.ProdutoRequest;
-import com.saas.catalogoapi.dto.ProdutoResponse;
 import com.saas.catalogoapi.service.CategoriaService;
 
 
