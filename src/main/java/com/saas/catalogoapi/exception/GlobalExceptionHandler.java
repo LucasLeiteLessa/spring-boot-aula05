@@ -35,6 +35,19 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro);
     }
 
+g    /**
+     * Trata a excecao de categoria nao encontrada, retornando HTTP 404.
+     */
+    @ExceptionHandler(CategoriaNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleCategoriaNotFound(CategoriaNotFoundException ex) {
+        ErrorResponse erro = new ErrorResponse(
+                HttpStatus.NOT_FOUND.value(),
+                ex.getMessage(),
+                LocalDateTime.now()
+        );
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(erro);
+    }
+
     /**
      * Trata qualquer outra excecao nao prevista, retornando HTTP 500.
      */
