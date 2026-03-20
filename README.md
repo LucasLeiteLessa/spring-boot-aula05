@@ -122,18 +122,20 @@ curl -s -X DELETE http://localhost:8080/api/v1/categorias/2 -w "\nHTTP Status: %
 
 ## Colecao Postman
 
-Importe o JSON abaixo no Postman (File > Import > Raw text):
+Abaixo há duas coleções que você pode importar no Postman (File > Import > Raw text):
+
+- Coleção de Produtos (igual ao exemplo usado anteriormente)
 
 ```json
 {
   "info": {
-    "name": "Catalogo API",
+    "name": "Catalogo API - Produtos",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
     {
       "key": "baseUrl",
-      "value": "http://localhost:8080/api/v1"
+      "value": "http://localhost:8080/api/v1/produtos"
     }
   ],
   "item": [
@@ -141,21 +143,21 @@ Importe o JSON abaixo no Postman (File > Import > Raw text):
       "name": "Listar todos os produtos",
       "request": {
         "method": "GET",
-        "url": "{{baseUrl}}/produtos"
+        "url": "{{baseUrl}}"
       }
     },
     {
       "name": "Buscar produto por ID",
       "request": {
         "method": "GET",
-        "url": "{{baseUrl}}/produtos/1"
+        "url": "{{baseUrl}}/1"
       }
     },
     {
       "name": "Criar novo produto",
       "request": {
         "method": "POST",
-        "url": "{{baseUrl}}/produtos",
+        "url": "{{baseUrl}}",
         "header": [
           {
             "key": "Content-Type",
@@ -172,7 +174,7 @@ Importe o JSON abaixo no Postman (File > Import > Raw text):
       "name": "Atualizar produto",
       "request": {
         "method": "PUT",
-        "url": "{{baseUrl}}/produtos/1",
+        "url": "{{baseUrl}}/1",
         "header": [
           {
             "key": "Content-Type",
@@ -189,28 +191,47 @@ Importe o JSON abaixo no Postman (File > Import > Raw text):
       "name": "Deletar produto",
       "request": {
         "method": "DELETE",
-        "url": "{{baseUrl}}/produtos/3"
+        "url": "{{baseUrl}}/3"
       }
-    },
+    }
+  ]
+}
+```
+
+- Coleção de Categorias 
+
+```json
+{
+  "info": {
+    "name": "Catalogo API - Categorias",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api/v1/categorias"
+    }
+  ],
+  "item": [
     {
       "name": "Listar todas as categorias",
       "request": {
         "method": "GET",
-        "url": "{{baseUrl}}/categorias"
+        "url": "{{baseUrl}}"
       }
     },
     {
       "name": "Buscar categoria por ID",
       "request": {
         "method": "GET",
-        "url": "{{baseUrl}}/categorias/1"
+        "url": "{{baseUrl}}/1"
       }
     },
     {
       "name": "Criar nova categoria",
       "request": {
         "method": "POST",
-        "url": "{{baseUrl}}/categorias",
+        "url": "{{baseUrl}}",
         "header": [
           {
             "key": "Content-Type",
@@ -227,7 +248,7 @@ Importe o JSON abaixo no Postman (File > Import > Raw text):
       "name": "Atualizar categoria",
       "request": {
         "method": "PUT",
-        "url": "{{baseUrl}}/categorias/1",
+        "url": "{{baseUrl}}/1",
         "header": [
           {
             "key": "Content-Type",
@@ -244,7 +265,7 @@ Importe o JSON abaixo no Postman (File > Import > Raw text):
       "name": "Deletar categoria",
       "request": {
         "method": "DELETE",
-        "url": "{{baseUrl}}/categorias/2"
+        "url": "{{baseUrl}}/2"
       }
     }
   ]
